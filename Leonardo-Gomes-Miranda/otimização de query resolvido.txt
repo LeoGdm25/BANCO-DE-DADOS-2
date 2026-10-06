@@ -24,14 +24,7 @@ Query 4 otimizada: SELECT estado, cidade
 FROM userinfo 
 WHERE estado = 'Sao Paulo';
 
-Query 5 otimizada: SELECT c.id, c.nome, 
-SUM(p.valor) AS total_gasto, 
-MAX(p.data_pedido) AS data_ultimo_pedido 
-FROM clientes c 
-INNER JOIN pedidos p ON c.id = p.id_cliente 
-WHERE c.data_cadastro >= '2023-01-01' AND c.status = 'ativo' 
-GROUP BY c.id, c.nome 
-ORDER BY total_gasto DESC;
+Query 5 otimizada: SELECT c.id, c.nome, SUM(p.valor) AS total_gasto, MAX(p.data_pedido) AS data_ultimo_pedido FROM clientes c JOIN pedidos p ON c.id = p.id_cliente WHERE c.data_cadastro >= '2023-01-01' AND c.status = 'ativo' GROUP BY c.id, c.nome ORDER BY total_gasto DESC;
  
 Query 6 otimizada: SELECT p.nome, c.nome_categoria 
 FROM produtos p 
